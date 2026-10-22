@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>华中科技大学 · 杜思娴 | Sixian Du</title>
+<meta name="description" content="杜思娴（Sixian Du），华中科技大学卫生政策与管理专业研究生，研究方向：心血管风险管理、DRG 支付改革、互联网+居家医疗服务。">
+<style>
+  :root{
+    --hust:#1A3A8F;        /* 华科蓝 */
+    --hust-dark:#10235c;
+    --accent:#C8A45C;      /* 金 */
+    --ink:#1f2733;
+    --muted:#5b6675;
+    --line:#e6e9ef;
+    --bg:#f7f8fb;
+    --card:#ffffff;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.7;font-size:16px;
+  }
+  a{color:var(--hust);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* 顶栏导航 */
+  nav{
+    position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
+  }
+  .nav-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;flex-wrap:wrap;gap:8px}
+  .nav-brand{font-weight:700;color:var(--hust);letter-spacing:.5px}
+  .nav-links{display:flex;gap:18px;flex-wrap:wrap;font-size:14.5px}
+  .nav-links a{color:var(--muted)}
+  .nav-links a:hover{color:var(--hust)}
+
+  /* Hero */
+  header.hero{
+    background:linear-gradient(135deg,var(--hust) 0%,var(--hust-dark) 100%);
+    color:#fff;padding:64px 20px 56px;
+  }
+  .hero-inner{max-width:960px;margin:0 auto;display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+  .avatar{
+    width:108px;height:108px;border-radius:50%;flex:0 0 auto;
+    background:rgba(255,255,255,.12);border:3px solid var(--accent);
+    display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:700;color:var(--accent);
+  }
+  .hero h1{margin:0;font-size:34px;letter-spacing:1px}
+  .hero .en{font-size:17px;opacity:.85;margin-top:4px;font-weight:400}
+  .hero .affil{margin-top:10px;opacity:.9}
+  .hero .contact{margin-top:14px;display:flex;gap:18px;flex-wrap:wrap;font-size:14.5px}
+  .hero .contact span{display:inline-flex;gap:6px;align-items:center}
+  .hero .contact a{color:#fff}
+
+  main{max-width:960px;margin:0 auto;padding:32px 20px 60px}
+  section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 28px;margin-bottom:22px;box-shadow:0 1px 3px rgba(16,35,92,.04)}
+  section h2{
+    margin:0 0 16px;font-size:21px;color:var(--hust);
+    display:flex;align-items:center;gap:10px;
+  }
+  section h2::before{content:"";width:6px;height:22px;background:var(--accent);border-radius:3px;display:inline-block}
+
+  .item{margin-bottom:16px;padding-bottom:16px;border-bottom:1px dashed var(--line)}
+  .item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+  .item .top{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:baseline}
+  .item .title{font-weight:600}
+  .item .period{color:var(--muted);font-size:14px;white-space:nowrap}
+  .item .sub{color:var(--muted);font-size:14.5px;margin-top:2px}
+  .item .desc{margin-top:6px;font-size:15px}
+  ul.clean{margin:8px 0 0;padding-left:20px}
+  ul.clean li{margin-bottom:8px}
+  .pub{font-size:15px;padding:10px 0;border-bottom:1px dashed var(--line)}
+  .pub:last-child{border-bottom:none}
+  .pub .me{font-weight:700;color:var(--hust-dark)}
+  .tag{display:inline-block;background:#eef2fb;color:var(--hust);border-radius:6px;padding:1px 8px;font-size:12.5px;margin-left:6px;vertical-align:middle}
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+  .skill-box{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+  .skill-box h3{margin:0 0 6px;font-size:15px;color:var(--hust)}
+  .skill-box p{margin:0;font-size:14.5px;color:var(--muted)}
+
+  footer{text-align:center;color:var(--muted);font-size:13.5px;padding:28px 20px 40px}
+  footer a{color:var(--hust)}
+
+  @media(max-width:600px){
+    .hero h1{font-size:27px}
+    main{padding:22px 14px 50px}
+    section{padding:20px 18px}
+  }
+  @media print{
+    nav,footer{display:none}
+    body{background:#fff;font-size:12px}
+    header.hero{padding:20px 0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    section{box-shadow:none;border:1px solid #ccc;break-inside:avoid;page-break-inside:avoid}
+    section h2{color:#000}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand">杜思娴 · Sixian Du</div>
+    <div class="nav-links">
+      <a href="#edu">教育背景</a>
+      <a href="#pubs">发表论文</a>
+      <a href="#awards">获奖</a>
+      <a href="#research">科研经历</a>
+      <a href="#conf">会议报告</a>
+      <a href="#exp">实习</a>
+      <a href="#skills">技能</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="avatar">杜</div>
+    <div>
+      <h1>杜思娴</h1>
+      <div class="en">Sixian Du</div>
+      <div class="affil">华中科技大学 · 医药卫生管理学院 · 卫生政策与管理</div>
+      <div class="contact">
+        <span>✉ <a href="mailto:dusixian16@163.com">dusixian16@163.com</a></span>
+        <span>☎ (+86) 182-7187-8646</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section id="edu">
+    <h2>教育背景 Education</h2>
+    <div class="item">
+      <div class="top"><div class="title">卫生政策与管理 硕士（Master）</div><div class="period">2024.09 – 2027.06</div></div>
+      <div class="sub">华中科技大学 · GPA 89.71 / 100（3.97 / 4）</div>
+      <div class="desc">研究方向：心血管风险管理、DRG 支付改革效果、互联网+居家医疗服务（Hospital-at-Home）。</div>
+    </div>
+    <div class="item">
+      <div class="top"><div class="title">研究生支教团志愿者教师</div><div class="period">2023.09 – 2024.08</div></div>
+      <div class="sub">第 25 届研究生支教团 · 云南省</div>
+    </div>
+    <div class="item">
+      <div class="top"><div class="title">卫生政策与管理 学士（Bachelor）</div><div class="period">2019.09 – 2023.06</div></div>
+      <div class="sub">华中科技大学 · GPA 85.01 / 100（3.73 / 4）</div>
+      <div class="desc">核心课程：卫生法学（96）、卫生经济学（81）、卫生事业管理（85）、流行病学（84）、毕业论文（93）。</div>
+    </div>
+  </section>
+
+  <section id="pubs">
+    <h2>发表论文 Publications</h2>
+    <div class="pub"><span class="me">Du, S*.</span>, &amp; Luo, F. (2024). Impact of policy reforms on hospital-at-home services: An interrupted time series analysis of Shanghai. <em>BMC Health Services Research</em>, 24(1), 1615.</div>
+    <div class="pub"><span class="me">Du, S*.</span>, Niu, H., Jiang, F., Gong, L., Zheng, S., Cui, Q., Yang, X., He, J., Dai, R., &amp; Luo, Q. (2025). Challenges of integrating HIV prevention and treatment in China's border mountain regions: A grounded theory study. <em>BMC Infectious Diseases</em>, 25(1), 687.</div>
+    <div class="pub"><span class="me">Du, S*.</span>, Liu, Y., Yang, C., Yang, Y., &amp; Yang, Y. (2025). How DRG payment reform shapes inpatient neurological care in an underdeveloped region: Evidence from a controlled interrupted time series study in Yunnan, China. <em>Risk Management and Healthcare Policy</em>, 18, 2575–2590.</div>
+    <div class="pub">Liu, Y., <span class="me">Du, S*.</span>, Cao, J., Niu, H., Jiang, F., &amp; Gong, L. (2024). Effects of a diagnosis-related group payment reform on length and costs of hospitalization in Sichuan, China: A synthetic control study. <em>Risk Management and Healthcare Policy</em>, 2024, 1623–1637. <span class="tag">通讯</span></div>
+    <div class="pub">Liu, Y., <span class="me">Du, S*.</span>, Liu, C., Xue, T., &amp; Tang, Y. (2024). Preference of primary care patients for home-based healthcare and support services: A discrete choice experiment in China. <em>Frontiers in Public Health</em>, 12, 1324776.</div>
+    <div class="pub">Jiang, F., Liu, Y., Niu, H., <span class="me">Du, S*.</span>, Gong, L., Yang, X., Rao, F., Wang, H., &amp; Wu, H. (2024). Long-term impacts of socioeconomic status and childhood trauma on depression in older adults: Social work strategies. <em>Social Work in Health Care</em>, 63(10), 518–537.</div>
+    <div class="pub">Liu, Y., Gong, L., Niu, H., Jiang, F., <span class="me">Du, S*.</span>, &amp; Jiang, Y. (2024). Health system efficiency and equity in ASEAN: An empirical investigation. <em>Cost Effectiveness and Resource Allocation</em>, 22(1), 86.</div>
+    <div class="pub">Liu, Y., <span class="me">Du, S.</span>, Liu, C., Xue, T., &amp; Tang, Y. (2024). Preference of primary care patients for home-based healthcare and support services: A discrete choice experiment in China. <em>Frontiers in Public Health</em>, 12, 1324776.</div>
+    <div class="pub"><span class="me">Du, S.</span> (Under review). Policy evolution and evaluation of online pharmacies regulation in China: A quantitative analysis based on mixed models. <em>JMIR</em>.</div>
+    <div class="pub"><span class="me">Du, S*.</span> (Revised). The impact of innovative health insurance payment reforms on inpatient surgery volume and costs: A propensity score matching–DiD analysis from Northern China.</div>
+    <div class="pub"><span class="me">Du, S*.</span>, Liu, Y., Yang, C., Yang, Y., &amp; Yang, Y. (Under review). Enhancing therapy monitoring and effectiveness for HIV patients in China's border regions through a healthcare consortium: An interrupted time series analysis.</div>
+    <p style="margin-top:12px;font-size:13.5px;color:var(--muted)">* 共同第一作者 / 通讯作者（Co-first / Corresponding author）。</p>
+  </section>
+
+  <section id="awards">
+    <h2>获奖与奖学金 Awards &amp; Scholarships</h2>
+    <ul class="clean">
+      <li><strong>一等学业奖学金</strong>（前 10%），华中科技大学，2024.09</li>
+      <li><strong>二等奖 &amp; 优秀本科毕业论文奖</strong>，第二届全国“人民健康”杯健康管理大赛 ——《中国居民互联网+居家医疗服务偏好：离散选择实验》，2023.05</li>
+      <li><strong>一等奖</strong>，第十四届“挑战杯”湖北省赛 ——《基层老年健康需求的精准供给与协同赋能：来自 5 省 8 市的证据》，2023.05</li>
+      <li>学业奖学金 &amp; 毕业论文奖（Top 10%）</li>
+    </ul>
+  </section>
+
+  <section id="research">
+    <h2>科研经历 Research Experiences</h2>
+    <div class="item">
+      <div class="top"><div class="title">国家重点研发计划：医养结合服务模式示范（2020YFC2006000）</div><div class="period">2023.10 – 至今</div></div>
+      <div class="sub">依托单位：郑州大学</div>
+      <div class="desc">设计问卷；参与湖北、云南现场调查；参与 3 篇中文核心期刊论文撰写。</div>
+    </div>
+    <div class="item">
+      <div class="top"><div class="title">国家社科基金：主动健康导向下慢性病管理四维协同机制（23BGL292）</div><div class="period">2024.10 – 至今</div></div>
+      <div class="sub">依托单位：上海交通大学</div>
+      <div class="desc">编制问卷与访谈提纲；在浙江省开展居民调查；起草学术论文与结题报告。</div>
+    </div>
+    <div class="item">
+      <div class="top"><div class="title">国家自然科学基金：DRG 支付下高套编码行为的影响因素与机制（72374078）</div><div class="period">2024.09 – 至今</div></div>
+      <div class="sub">PI：陶红兵 教授</div>
+      <div class="desc">编制访谈提纲；在内蒙古、四川开展田野调查；运用合成控制法与双重差分评估政策效果；共同撰写论文。</div>
+    </div>
+    <div class="item">
+      <div class="top"><div class="title">中国老年医学学会项目：人机交互视角下老年不良心血管事件管理与健康行为促进</div><div class="period">2025 – 至今</div></div>
+      <div class="sub">PI：刘亚青</div>
+      <div class="desc">参与概念框架构建、数据收集与论文撰写。</div>
+    </div>
+    <div class="item">
+      <div class="top"><div class="title">中国老年医学学会项目：真实世界数据下老年 2 型糖尿病合并高血压患者危险因素与预测模型</div><div class="period">2025 – 至今</div></div>
+      <div class="sub">PI：刘亚青</div>
+      <div class="desc">起草项目申请书，开展田野调查，参与论文写作。</div>
+    </div>
+  </section>
+
+  <section id="conf">
+    <h2>会议与报告 Conferences &amp; Presentations</h2>
+    <ul class="clean">
+      <li><strong>2025.07</strong> 国际卫生经济学会（iHEA）2025 年会 会议报告 ——《线上能否替代线下？在线问诊对线下诊疗的可替代性研究》</li>
+      <li><strong>2025.05</strong> 健康老龄化大会 2025 口头报告 ——《政策改革对上海居家医疗服务的影响：中断时间序列分析》</li>
+      <li><strong>2024.11</strong> 复旦大学第四届卫生经济学研究生论坛 ——《中断时间序列设计的原理与应用》</li>
+      <li><strong>2025.04</strong> 第十届全国艾滋病学术会议 海报展示 ——《基于 SFIC 模型的县域医共体 HIV 防治协同》</li>
+    </ul>
+  </section>
+
+  <section id="exp">
+    <h2>实习经历 Work Experience</h2>
+    <div class="item">
+      <div class="top"><div class="title">科研办公室 实习生 · 协和医院（华中科技大学同济医学院）</div><div class="period">2024.09 – 2025.03</div></div>
+      <div class="desc">协助撰写研究论文与项目报告。</div>
+    </div>
+    <div class="item">
+      <div class="top"><div class="title">实习生 · 湖北省卫生健康委员会</div><div class="period">2023.01 – 2023.06</div></div>
+      <div class="desc">协助公文处理与翻译工作。</div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>技能 Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-box"><h3>统计与建模工具</h3><p>R、SAS、SPSS、MATLAB、EViews、Python</p></div>
+      <div class="skill-box"><h3>研究方法</h3><p>双重差分（DID）、离散选择实验（DCE）、中断时间序列（ITSA）、Cox 回归、Logistic 回归、LDA、机器学习</p></div>
+      <div class="skill-box"><h3>语言</h3><p>普通话（母语）；英语：CET-6（513）、IELTS 7.0（预期）</p></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © <span id="year"></span> 杜思娴 · 华中科技大学 &nbsp;|&nbsp; 个人学术主页 &nbsp;|&nbsp; Email: <a href="mailto:dusixian16@163.com">dusixian16@163.com</a>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</footer>
+
+</body>
+</html>
