@@ -1,237 +1,46 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>华中科技大学 · 杜思娴 | Sixian Du</title>
-<meta name="description" content="杜思娴（Sixian Du），华中科技大学卫生政策与管理专业研究生，研究方向：心血管风险管理、DRG 支付改革、互联网+居家医疗服务。">
-<style>
-  :root{
-    --hust:#1A3A8F;        /* 华科蓝 */
-    --hust-dark:#10235c;
-    --accent:#C8A45C;      /* 金 */
-    --ink:#1f2733;
-    --muted:#5b6675;
-    --line:#e6e9ef;
-    --bg:#f7f8fb;
-    --card:#ffffff;
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    margin:0;font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    color:var(--ink);background:var(--bg);line-height:1.7;font-size:16px;
-  }
-  a{color:var(--hust);text-decoration:none}
-  a:hover{text-decoration:underline}
-
-  /* 顶栏导航 */
-  nav{
-    position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
-    backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
-  }
-  .nav-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;flex-wrap:wrap;gap:8px}
-  .nav-brand{font-weight:700;color:var(--hust);letter-spacing:.5px}
-  .nav-links{display:flex;gap:18px;flex-wrap:wrap;font-size:14.5px}
-  .nav-links a{color:var(--muted)}
-  .nav-links a:hover{color:var(--hust)}
-
-  /* Hero */
-  header.hero{
-    background:linear-gradient(135deg,var(--hust) 0%,var(--hust-dark) 100%);
-    color:#fff;padding:64px 20px 56px;
-  }
-  .hero-inner{max-width:960px;margin:0 auto;display:flex;gap:28px;align-items:center;flex-wrap:wrap}
-  .avatar{
-    width:108px;height:108px;border-radius:50%;flex:0 0 auto;
-    background:rgba(255,255,255,.12);border:3px solid var(--accent);
-    display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:700;color:var(--accent);
-  }
-  .hero h1{margin:0;font-size:34px;letter-spacing:1px}
-  .hero .en{font-size:17px;opacity:.85;margin-top:4px;font-weight:400}
-  .hero .affil{margin-top:10px;opacity:.9}
-  .hero .contact{margin-top:14px;display:flex;gap:18px;flex-wrap:wrap;font-size:14.5px}
-  .hero .contact span{display:inline-flex;gap:6px;align-items:center}
-  .hero .contact a{color:#fff}
-
-  main{max-width:960px;margin:0 auto;padding:32px 20px 60px}
-  section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 28px;margin-bottom:22px;box-shadow:0 1px 3px rgba(16,35,92,.04)}
-  section h2{
-    margin:0 0 16px;font-size:21px;color:var(--hust);
-    display:flex;align-items:center;gap:10px;
-  }
-  section h2::before{content:"";width:6px;height:22px;background:var(--accent);border-radius:3px;display:inline-block}
-
-  .item{margin-bottom:16px;padding-bottom:16px;border-bottom:1px dashed var(--line)}
-  .item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
-  .item .top{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:baseline}
-  .item .title{font-weight:600}
-  .item .period{color:var(--muted);font-size:14px;white-space:nowrap}
-  .item .sub{color:var(--muted);font-size:14.5px;margin-top:2px}
-  .item .desc{margin-top:6px;font-size:15px}
-  ul.clean{margin:8px 0 0;padding-left:20px}
-  ul.clean li{margin-bottom:8px}
-  .pub{font-size:15px;padding:10px 0;border-bottom:1px dashed var(--line)}
-  .pub:last-child{border-bottom:none}
-  .pub .me{font-weight:700;color:var(--hust-dark)}
-  .tag{display:inline-block;background:#eef2fb;color:var(--hust);border-radius:6px;padding:1px 8px;font-size:12.5px;margin-left:6px;vertical-align:middle}
-  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-  .skill-box{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
-  .skill-box h3{margin:0 0 6px;font-size:15px;color:var(--hust)}
-  .skill-box p{margin:0;font-size:14.5px;color:var(--muted)}
-
-  footer{text-align:center;color:var(--muted);font-size:13.5px;padding:28px 20px 40px}
-  footer a{color:var(--hust)}
-
-  @media(max-width:600px){
-    .hero h1{font-size:27px}
-    main{padding:22px 14px 50px}
-    section{padding:20px 18px}
-  }
-  @media print{
-    nav,footer{display:none}
-    body{background:#fff;font-size:12px}
-    header.hero{padding:20px 0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-    section{box-shadow:none;border:1px solid #ccc;break-inside:avoid;page-break-inside:avoid}
-    section h2{color:#000}
-  }
-</style>
-</head>
-<body>
-
-<nav>
-  <div class="nav-inner">
-    <div class="nav-brand">杜思娴 · Sixian Du</div>
-    <div class="nav-links">
-      <a href="#edu">教育背景</a>
-      <a href="#pubs">发表论文</a>
-      <a href="#awards">获奖</a>
-      <a href="#research">科研经历</a>
-      <a href="#conf">会议报告</a>
-      <a href="#exp">实习</a>
-      <a href="#skills">技能</a>
-    </div>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="hero-inner">
-    <div class="avatar"><img src="avatar.jpg" alt="杜思娴" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
-    <div>
-      <h1>杜思娴</h1>
-      <div class="en">Sixian Du</div>
-      <div class="affil">华中科技大学 · 医药卫生管理学院 · 卫生政策与管理</div>
-      <div class="contact">
-        <span>✉ <a href="mailto:dusixian16@163.com">dusixian16@163.com</a></span>
-        <span>☎ (+86) 182-7187-8646</span>
-      </div>
-    </div>
-  </div>
-</header>
-
-<main>
-
-  <section id="edu">
-    <h2>教育背景 Education</h2>
-    <div class="item">
-      <div class="top"><div class="title">卫生政策与管理 硕士（Master）</div><div class="period">2024.09 – 2027.06</div></div>
-      <div class="sub">华中科技大学 · GPA 89.71 / 100（3.97 / 4）</div>
-      <div class="desc">研究方向：心血管风险管理、DRG 支付改革效果、互联网+居家医疗服务（Hospital-at-Home）。</div>
-    </div>
-    <div class="item">
-      <div class="top"><div class="title">研究生支教团志愿者教师</div><div class="period">2023.09 – 2024.08</div></div>
-      <div class="sub">第 25 届研究生支教团 · 云南省</div>
-    </div>
-    <div class="item">
-      <div class="top"><div class="title">卫生政策与管理 学士（Bachelor）</div><div class="period">2019.09 – 2023.06</div></div>
-      <div class="sub">华中科技大学 · GPA 85.01 / 100（3.73 / 4）</div>
-      <div class="desc">核心课程：卫生法学（96）、卫生经济学（81）、卫生事业管理（85）、流行病学（84）、毕业论文（93）。</div>
-    </div>
-  </section>
-
-  <section id="pubs">
-    <h2>发表论文 Publications</h2>
-    <div class="pub"><span class="me">Du, S*.</span>, &amp; Luo, F. (2024). Impact of policy reforms on hospital-at-home services: An interrupted time series analysis of Shanghai. <em>BMC Health Services Research</em>, 24(1), 1615.</div>
-    <div class="pub"><span class="me">Du, S*.</span>, Niu, H., Jiang, F., Gong, L., Zheng, S., Cui, Q., Yang, X., He, J., Dai, R., &amp; Luo, Q. (2025). Challenges of integrating HIV prevention and treatment in China's border mountain regions: A grounded theory study. <em>BMC Infectious Diseases</em>, 25(1), 687.</div>
-    <div class="pub"><span class="me">Du, S*.</span>, Liu, Y., Yang, C., Yang, Y., &amp; Yang, Y. (2025). How DRG payment reform shapes inpatient neurological care in an underdeveloped region: Evidence from a controlled interrupted time series study in Yunnan, China. <em>Risk Management and Healthcare Policy</em>, 18, 2575–2590.</div>
-    <div class="pub">Liu, Y., <span class="me">Du, S*.</span>, Cao, J., Niu, H., Jiang, F., &amp; Gong, L. (2024). Effects of a diagnosis-related group payment reform on length and costs of hospitalization in Sichuan, China: A synthetic control study. <em>Risk Management and Healthcare Policy</em>, 2024, 1623–1637. <span class="tag">通讯</span></div>
-    <div class="pub">Liu, Y., <span class="me">Du, S*.</span>, Liu, C., Xue, T., &amp; Tang, Y. (2024). Preference of primary care patients for home-based healthcare and support services: A discrete choice experiment in China. <em>Frontiers in Public Health</em>, 12, 1324776.</div>
-    <div class="pub">Jiang, F., Liu, Y., Niu, H., <span class="me">Du, S*.</span>, Gong, L., Yang, X., Rao, F., Wang, H., &amp; Wu, H. (2024). Long-term impacts of socioeconomic status and childhood trauma on depression in older adults: Social work strategies. <em>Social Work in Health Care</em>, 63(10), 518–537.</div>
-    <div class="pub">Liu, Y., Gong, L., Niu, H., Jiang, F., <span class="me">Du, S*.</span>, &amp; Jiang, Y. (2024). Health system efficiency and equity in ASEAN: An empirical investigation. <em>Cost Effectiveness and Resource Allocation</em>, 22(1), 86.</div>
-    <div class="pub">Liu, Y., <span class="me">Du, S.</span>, Liu, C., Xue, T., &amp; Tang, Y. (2024). Preference of primary care patients for home-based healthcare and support services: A discrete choice experiment in China. <em>Frontiers in Public Health</em>, 12, 1324776.</div>
-    <div class="pub"><span class="me">Du, S.</span> (Under review). Policy evolution and evaluation of online pharmacies regulation in China: A quantitative analysis based on mixed models. <em>JMIR</em>.</div>
-    <div class="pub"><span class="me">Du, S*.</span> (Revised). The impact of innovative health insurance payment reforms on inpatient surgery volume and costs: A propensity score matching–DiD analysis from Northern China.</div>
-    <div class="pub"><span class="me">Du, S*.</span>, Liu, Y., Yang, C., Yang, Y., &amp; Yang, Y. (Under review). Enhancing therapy monitoring and effectiveness for HIV patients in China's border regions through a healthcare consortium: An interrupted time series analysis.</div>
-    <p style="margin-top:12px;font-size:13.5px;color:var(--muted)">* 共同第一作者 / 通讯作者（Co-first / Corresponding author）。</p>
-  </section>
-
-  <section id="awards">
-    <h2>获奖与奖学金 Awards &amp; Scholarships</h2>
-    <ul class="clean">
-      <li><strong>一等学业奖学金</strong>（前 10%），华中科技大学，2024.09</li>
-      <li><strong>二等奖 &amp; 优秀本科毕业论文奖</strong>，第二届全国“人民健康”杯健康管理大赛 ——《中国居民互联网+居家医疗服务偏好：离散选择实验》，2023.05</li>
-      <li><strong>一等奖</strong>，第十四届“挑战杯”湖北省赛 ——《基层老年健康需求的精准供给与协同赋能：来自 5 省 8 市的证据》，2023.05</li>
-      <li>学业奖学金 &amp; 毕业论文奖（Top 10%）</li>
-    </ul>
-  </section>
-
-  <section id="research">
-    <h2>科研经历 Research Experiences</h2>
-    <div class="item">
-      <div class="top"><div class="title">国家重点研发计划：医养结合服务模式示范（2020YFC2006000）</div><div class="period">2023.10 – 至今</div></div>
-      <div class="sub">依托单位：郑州大学</div>
-      <div class="desc">设计问卷；参与湖北、云南现场调查；参与 3 篇中文核心期刊论文撰写。</div>
-    </div>
-    <div class="item">
-      <div class="top"><div class="title">国家社科基金：主动健康导向下慢性病管理四维协同机制（23BGL292）</div><div class="period">2024.10 – 至今</div></div>
-      <div class="sub">依托单位：上海交通大学</div>
-      <div class="desc">编制问卷与访谈提纲；在浙江省开展居民调查；起草学术论文与结题报告。</div>
-    </div>
-    <div class="item">
-      <div class="top"><div class="title">中国老年医学学会项目：人机交互视角下老年不良心血管事件管理与健康行为促进</div><div class="period">2025 – 至今</div></div>      <div class="desc">参与概念框架构建、数据收集与论文撰写。</div>
-    </div>
-    <div class="item">
-      <div class="top"><div class="title">中国老年医学学会项目：真实世界数据下老年 2 型糖尿病合并高血压患者危险因素与预测模型</div><div class="period">2025 – 至今</div></div>      <div class="desc">起草项目申请书，开展田野调查，参与论文写作。</div>
-    </div>
-  </section>
-
-  <section id="conf">
-    <h2>会议与报告 Conferences &amp; Presentations</h2>
-    <ul class="clean">
-      <li><strong>2025.07</strong> 国际卫生经济学会（iHEA）2025 年会 会议报告 ——《线上能否替代线下？在线问诊对线下诊疗的可替代性研究》</li>
-      <li><strong>2025.05</strong> 健康老龄化大会 2025 口头报告 ——《政策改革对上海居家医疗服务的影响：中断时间序列分析》</li>
-      <li><strong>2024.11</strong> 复旦大学第四届卫生经济学研究生论坛 ——《中断时间序列设计的原理与应用》</li>
-      <li><strong>2025.04</strong> 第十届全国艾滋病学术会议 海报展示 ——《基于 SFIC 模型的县域医共体 HIV 防治协同》</li>
-    </ul>
-  </section>
-
-  <section id="exp">
-    <h2>实习经历 Work Experience</h2>
-    <div class="item">
-      <div class="top"><div class="title">科研办公室 实习生 · 协和医院（华中科技大学同济医学院）</div><div class="period">2024.09 – 2025.03</div></div>
-      <div class="desc">协助撰写研究论文与项目报告。</div>
-    </div>
-    <div class="item">
-      <div class="top"><div class="title">实习生 · 湖北省卫生健康委员会</div><div class="period">2023.01 – 2023.06</div></div>
-      <div class="desc">协助公文处理与翻译工作。</div>
-    </div>
-  </section>
-
-  <section id="skills">
-    <h2>技能 Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-box"><h3>统计与建模工具</h3><p>R、SAS、SPSS、MATLAB、EViews、Python</p></div>
-      <div class="skill-box"><h3>研究方法</h3><p>双重差分（DID）、离散选择实验（DCE）、中断时间序列（ITSA）、Cox 回归、Logistic 回归、LDA、机器学习</p></div>
-      <div class="skill-box"><h3>语言</h3><p>普通话（母语）；英语：CET-6（513）、IELTS 7.0（预期）</p></div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  © <span id="year"></span> 杜思娴 · 华中科技大学 &nbsp;|&nbsp; 个人学术主页 &nbsp;|&nbsp; Email: <a href="mailto:dusixian16@163.com">dusixian16@163.com</a>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
-</footer>
-
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light dark"><title>杜思娴 Sixian Du | Health Policy & Management</title><meta name="description" content="Sixian Du is a master’s student at Huazhong University of Science and Technology researching health policy, DRG payment reform, home-based care and health systems."><meta property="og:title" content="杜思娴 Sixian Du · Health Policy & Management"><meta property="og:description" content="Research on healthcare payment reform, hospital-at-home services and population health."><meta property="og:type" content="profile"><link rel="canonical" href="https://naturedu.github.io/"><meta property="og:image" content="https://naturedu.github.io/assets/sixian-du.jpg"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/minimal-light.css"><link rel="stylesheet" href="assets/site.css"><script>try{document.documentElement.dataset.theme=localStorage.getItem('sd-theme')||'light'}catch(e){}</script></head><body id="top"><a class="skip-link" href="#main">Skip to content</a><div class="topbar"><div class="topbar-inner"><a href="#top" class="brand" aria-label="sixiandu 杜思娴 首页">sixiandu<span class="brand-cn">杜思娴</span></a><nav aria-label="Main navigation"><a href="#about" data-nav="about"><span data-en="About" data-zh="关于" >About</span></a><a href="#research" data-nav="research"><span data-en="Research" data-zh="研究" >Research</span></a><a href="#publications" data-nav="publications"><span data-en="Publications" data-zh="论文" >Publications</span></a><a href="#experience" data-nav="experience"><span data-en="Experience" data-zh="经历" >Experience</span></a></nav><div class="top-controls"><button type="button" id="language-toggle" aria-label="Switch to Chinese">中文</button><span class="control-divider"></span><button type="button" id="theme-toggle" aria-label="Switch colour theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.9 13a9 9 0 0 1-9.9-9.9A9 9 0 1 0 20.9 13Z"/></svg></button></div></div></div><div class="wrapper"><header class="profile"><div class="portrait-wrap"><img class="portrait" src="assets/sixian-du.jpg" width="1000" height="1499" alt="Portrait of Sixian Du" fetchpriority="high"><span class="portrait-caption">SIXIAN DU</span></div><div class="profile-info"><p class="profile-name"><span data-en="Sixian Du" data-zh="杜思娴">Sixian Du</span></p><p data-en="Master’s student" data-zh="硕士研究生" class="profile-role">Master’s student</p><p data-en="Health Policy and Management" data-zh="卫生政策与管理" class="profile-field">Health Policy and Management</p><div class="affiliation"><span data-en="Huazhong University of" data-zh="华中科技大学" >Huazhong University of</span><span data-en="Science and Technology" data-zh="同济医学院医药卫生管理学院" >Science and Technology</span></div><a class="profile-email" href="mailto:dusixian16@163.com">dusixian16@163.com <span>↗</span></a><div class="profile-links"><a href="cv.html" target="_blank">CV <span>↗</span></a><a href="https://github.com/naturedu" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="#contact"><span data-en="Contact" data-zh="联系" >Contact</span> <span>↗</span></a></div><a class="orcid-link" href="https://orcid.org/0009-0009-9804-4645" target="_blank" rel="noopener noreferrer"><span class="orcid-icon">iD</span><span>0009-0009-9804-4645</span><span>↗</span></a><p class="location"><svg width="13" height="15" viewBox="0 0 20 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 22s8-8 8-14A8 8 0 0 0 2 8c0 6 8 14 8 14Z"/><circle cx="10" cy="8" r="2.5"/></svg><span data-en="Wuhan, China" data-zh="中国 · 武汉" >Wuhan, China</span></p></div></header><main id="main"><section id="about" class="about-section"><div class="eyebrow">HEALTH POLICY & MANAGEMENT</div><h1><span data-en="Sixian Du" data-zh="杜思娴">Sixian Du</span><span class="name-dot">.</span></h1><p data-en="Understanding how policy shapes care." data-zh="理解政策如何影响医疗照护。" class="hero-line">Understanding how policy shapes care.</p>
+ <p data-en="I am a master’s student in Health Policy and Management at Huazhong University of Science and Technology. My research examines healthcare payment reform, hospital-at-home services, and the organisation of care for ageing populations." data-zh="我是华中科技大学卫生政策与管理专业硕士研究生，研究兴趣包括医保支付改革、家庭病床服务，以及老龄人群的医疗照护服务组织。" class="bio">I am a master’s student in Health Policy and Management at Huazhong University of Science and Technology. My research examines healthcare payment reform, hospital-at-home services, and the organisation of care for ageing populations.</p>
+ <p data-en="I combine policy evaluation with patient and community perspectives, using methods such as interrupted time series, difference-in-differences, synthetic control and discrete choice experiments." data-zh="我将政策效果评估与患者及社区视角相结合，使用间断时间序列、双重差分、合成控制和离散选择实验等方法开展研究。" class="bio secondary">I combine policy evaluation with patient and community perspectives, using methods such as interrupted time series, difference-in-differences, synthetic control and discrete choice experiments.</p>
+ <div class="hero-actions"><a class="primary-button" href="#publications"><span data-en="Explore my research" data-zh="查看研究成果" >Explore my research</span> <span aria-hidden="true">↗</span></a><a class="text-link" href="cv.html" target="_blank"><span data-en="Curriculum vitae" data-zh="学术简历" >Curriculum vitae</span> <span aria-hidden="true">↗</span></a></div>
+ <div class="education-strip"><span class="education-marker" aria-hidden="true"></span><div><strong data-en="Master’s · Huazhong University of Science and Technology" data-zh="硕士研究生 · 华中科技大学" >Master’s · Huazhong University of Science and Technology</strong><span data-en="2024–2027 (expected) · Wuhan, China" data-zh="2024–2027（预计）· 中国武汉" >2024–2027 (expected) · Wuhan, China</span></div></div></section><section id="research"><div class="section-head"><div class="section-title"><span class="section-number">01</span><h2 data-en="Research interests" data-zh="研究方向" >Research interests</h2></div></div><div class="research-list"><article class="research-row"><span class="research-index">01</span><div><h3 data-en="Health financing &amp; payment reform" data-zh="卫生筹资与支付改革" >Health financing &amp; payment reform</h3><p data-en="How do payment incentives shape healthcare delivery, costs and efficiency? My work focuses on DRG reform and policy evaluation." data-zh="关注支付激励如何影响医疗服务、费用与效率，以DRG支付改革和政策效果评估为主要研究内容。" >How do payment incentives shape healthcare delivery, costs and efficiency? My work focuses on DRG reform and policy evaluation.</p><span class="research-tag">DRG · Policy evaluation</span></div><span class="research-arrow" aria-hidden="true">↗</span></article><article class="research-row"><span class="research-index">02</span><div><h3 data-en="Home-based &amp; integrated care" data-zh="居家医疗与整合照护" >Home-based &amp; integrated care</h3><p data-en="I study hospital-at-home services, patient preferences, and the coordination of healthcare and support for older adults." data-zh="研究家庭病床、患者服务偏好，以及面向老年人的医疗与支持服务协同。" >I study hospital-at-home services, patient preferences, and the coordination of healthcare and support for older adults.</p><span class="research-tag">Hospital-at-home · DCE</span></div><span class="research-arrow" aria-hidden="true">↗</span></article><article class="research-row"><span class="research-index">03</span><div><h3 data-en="Health systems &amp; population health" data-zh="卫生系统与人群健康" >Health systems &amp; population health</h3><p data-en="My interests include access to HIV care, cardiovascular risk management, and equity in health resource allocation." data-zh="关注艾滋病服务可及性、心血管风险管理与卫生资源配置公平性。" >My interests include access to HIV care, cardiovascular risk management, and equity in health resource allocation.</p><span class="research-tag">Equity · Chronic disease</span></div><span class="research-arrow" aria-hidden="true">↗</span></article></div><div class="methods-block"><span data-en="METHODS &amp; TOOLS" data-zh="研究方法与工具" class="eyebrow">METHODS &amp; TOOLS</span><p>Interrupted time series · Difference-in-differences · Synthetic control · Discrete choice experiments · Grounded theory</p><div class="tool-list"><span>R</span><span>Python</span><span>SAS</span><span>SPSS</span><span>MATLAB</span><span>EViews</span></div></div></section><section id="publications"><div class="section-head"><div class="section-title"><span class="section-number">02</span><h2 data-en="Selected publications" data-zh="学术论文" >Selected publications</h2></div><span data-en="2024–2026 · 10 articles" data-zh="2024–2026 · 10篇论文" class="section-aside">2024–2026 · 10 articles</span></div><div class="publication-tools"><div class="topic-filters" role="group" aria-label="Filter publications by research topic"><button type="button" class="filter active" data-filter="all" aria-pressed="true"><span data-en="All topics" data-zh="全部主题" >All topics</span></button><button type="button" class="filter" data-filter="payment" aria-pressed="false"><span data-en="Payment reform" data-zh="支付改革" >Payment reform</span></button><button type="button" class="filter" data-filter="home" aria-pressed="false"><span data-en="Home-based care" data-zh="居家医疗" >Home-based care</span></button><button type="button" class="filter" data-filter="systems" aria-pressed="false"><span data-en="Health systems" data-zh="卫生系统" >Health systems</span></button></div><label class="search-label"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><input id="paper-search" type="search" placeholder="Search articles or methods…" aria-label="Search articles or methods"><span class="search-shortcut">/</span></label></div><p id="result-count" class="sr-only" aria-live="polite"></p><p class="orcid-record"><a href="https://orcid.org/0009-0009-9804-4645" target="_blank" rel="noopener noreferrer"><span data-en="Full publication record on ORCID" data-zh="完整成果记录见 ORCID" >Full publication record on ORCID</span> ↗</a></p><ol class="bibliography"><li class="paper" data-year="2026" data-topic="systems" data-search="enhancing therapy monitoring and effectiveness for hiv patients in china’s border regions through a healthcare consortium: an interrupted time series analysis bmc infectious diseases interrupted time series">
+ <div class="paper-index">01<span>2026</span></div><div class="paper-body"><div class="paper-meta"><span>BMC Infectious Diseases</span><span class="meta-dot">·</span><span>2026</span></div>
+ <h3><a href="https://doi.org/10.1186/s12879-026-13684-x" target="_blank" rel="noopener noreferrer">Enhancing therapy monitoring and effectiveness for HIV patients in China’s border regions through a healthcare consortium: An interrupted time series analysis<span class="external" aria-hidden="true"> ↗</span></a></h3>
+ <p class="authors"><strong>Du, S.</strong>; Dai, R.; He, J.; Luo, Q.; Yang, Y.; Yang, Y.</p><p data-en="Evaluating the contribution of a regional healthcare consortium to HIV treatment monitoring and care in a border county in Yunnan." data-zh="通过间断时间序列分析，评估云南边境地区医共体建设与艾滋病治疗监测及照护变化的关系。" class="paper-note">Evaluating the contribution of a regional healthcare consortium to HIV treatment monitoring and care in a border county in Yunnan.</p>
+ <div class="paper-bottom"><span class="method">Interrupted time series</span><a class="text-link" href="https://doi.org/10.1186/s12879-026-13684-x" target="_blank" rel="noopener noreferrer"><span data-en="Read article" data-zh="阅读论文" >Read article</span> <span aria-hidden="true">↗</span></a><button type="button" class="cite-button" data-cite="0"><span data-en="Cite" data-zh="引用" >Cite</span></button></div></div></li><li class="paper" data-year="2025" data-topic="systems" data-search="evaluation of the effectiveness of close-knit medical alliances on the integration of hiv prevention and treatment in county-level areas in china: protocol for a delphi study jmir research protocols delphi study protocol">
+ <div class="paper-index">02<span>2025</span></div><div class="paper-body"><div class="paper-meta"><span>JMIR Research Protocols</span><span class="meta-dot">·</span><span>2025</span></div>
+ <h3><a href="https://doi.org/10.2196/76420" target="_blank" rel="noopener noreferrer">Evaluation of the effectiveness of close-knit medical alliances on the integration of HIV prevention and treatment in county-level areas in China: Protocol for a Delphi study<span class="external" aria-hidden="true"> ↗</span></a></h3>
+ <p class="authors"><strong>Du, S.</strong>; Liu, Y.; Luo, Q.; Dai, R.; He, J.; Yang, Y.; Yang, Y.</p><p data-en="A published study protocol to develop an evaluation framework for integrating HIV prevention and treatment within county-level medical alliances." data-zh="已发表的研究方案，拟通过德尔菲法建立县域医共体艾滋病防治融合效果评价框架。" class="paper-note">A published study protocol to develop an evaluation framework for integrating HIV prevention and treatment within county-level medical alliances.</p>
+ <div class="paper-bottom"><span class="method">Delphi study protocol</span><a class="text-link" href="https://doi.org/10.2196/76420" target="_blank" rel="noopener noreferrer"><span data-en="Read article" data-zh="阅读论文" >Read article</span> <span aria-hidden="true">↗</span></a><button type="button" class="cite-button" data-cite="1"><span data-en="Cite" data-zh="引用" >Cite</span></button></div></div></li><li class="paper" data-year="2025" data-topic="systems" data-search="challenges of integrating hiv prevention and treatment in china’s border mountain regions: a grounded theory study bmc infectious diseases grounded theory">
+ <div class="paper-index">03<span>2025</span></div><div class="paper-body"><div class="paper-meta"><span>BMC Infectious Diseases</span><span class="meta-dot">·</span><span>2025</span></div>
+ <h3><a href="https://doi.org/10.1186/s12879-025-11087-y" target="_blank" rel="noopener noreferrer">Challenges of integrating HIV prevention and treatment in China’s border mountain regions: a grounded theory study<span class="external" aria-hidden="true"> ↗</span></a></h3>
+ <p class="authors"><strong>Du, S.</strong>; Niu, H.; Jiang, F.; Gong, L.; Zheng, S.; Cui, Q.; Yang, X.; He, J.; Dai, R.; Luo, Q.; Yang, Y.</p><p data-en="Exploring the organisational and patient-level barriers to integrated HIV care in resource-constrained border communities." data-zh="以扎根理论探讨资源有限的边境地区中，影响艾滋病防治协同的组织与患者层面障碍。" class="paper-note">Exploring the organisational and patient-level barriers to integrated HIV care in resource-constrained border communities.</p>
+ <div class="paper-bottom"><span class="method">Grounded theory</span><a class="text-link" href="https://doi.org/10.1186/s12879-025-11087-y" target="_blank" rel="noopener noreferrer"><span data-en="Read article" data-zh="阅读论文" >Read article</span> <span aria-hidden="true">↗</span></a><button type="button" class="cite-button" data-cite="2"><span data-en="Cite" data-zh="引用" >Cite</span></button></div></div></li><li class="paper" data-year="2025" data-topic="payment" data-search="how drg payment reform shapes inpatient neurological care in an underdeveloped region: evidence from a controlled interrupted time series study in yunnan, china risk management and healthcare policy controlled interrupted time series">
+ <div class="paper-index">04<span>2025</span></div><div class="paper-body"><div class="paper-meta"><span>Risk Management and Healthcare Policy</span><span class="meta-dot">·</span><span>2025</span></div>
+ <h3><a href="https://doi.org/10.2147/RMHP.S530693" target="_blank" rel="noopener noreferrer">How DRG payment reform shapes inpatient neurological care in an underdeveloped region: Evidence from a controlled interrupted time series study in Yunnan, China<span class="external" aria-hidden="true"> ↗</span></a></h3>
+ <p class="authors"><strong>Du, S.</strong>; Liu, Y.; Yang, C.; Yang, Y.; Yang, Y.</p><p data-en="Evaluating changes in inpatient service capacity, costs and efficiency following DRG payment reform in Yunnan." data-zh="采用对照间断时间序列设计，评估云南地区DRG支付改革后住院服务能力、费用与效率的变化。" class="paper-note">Evaluating changes in inpatient service capacity, costs and efficiency following DRG payment reform in Yunnan.</p>
+ <div class="paper-bottom"><span class="method">Controlled interrupted time series</span><a class="text-link" href="https://doi.org/10.2147/RMHP.S530693" target="_blank" rel="noopener noreferrer"><span data-en="Read article" data-zh="阅读论文" >Read article</span> <span aria-hidden="true">↗</span></a><button type="button" class="cite-button" data-cite="3"><span data-en="Cite" data-zh="引用" >Cite</span></button></div></div></li><li class="paper" data-year="2024" data-topic="home" data-search="impact of policy reforms on hospital-at-home services: an interrupted time series analysis of shanghai bmc health services research interrupted time series">
+ <div class="paper-index">05<span>2024</span></div><div class="paper-body"><div class="paper-meta"><span>BMC Health Services Research</span><span class="meta-dot">·</span><span>2024</span></div>
+ <h3><a href="https://doi.org/10.1186/s12913-024-12105-6" target="_blank" rel="noopener noreferrer">Impact of policy reforms on hospital-at-home services: An interrupted time series analysis of Shanghai<span class="external" aria-hidden="true"> ↗</span></a></h3>
+ <p class="authors"><strong>Du, S.</strong>; Luo, F.</p><p data-en="Examining how policy changes relate to the provision of hospital-at-home services in Shanghai." data-zh="以上海为例，分析政策调整与家庭病床服务供给变化之间的关系。" class="paper-note">Examining how policy changes relate to the provision of hospital-at-home services in Shanghai.</p>
+ <div class="paper-bottom"><span class="method">Interrupted time series</span><a class="text-link" href="https://doi.org/10.1186/s12913-024-12105-6" target="_blank" rel="noopener noreferrer"><span data-en="Read article" data-zh="阅读论文" >Read article</span> <span aria-hidden="true">↗</span></a><button type="button" class="cite-button" data-cite="4"><span data-en="Cite" data-zh="引用" >Cite</span></button></div></div></li><li class="paper" data-year="2024" data-topic="payment" data-search="effects of a diagnosis-related group payment reform on length and costs of hospitalization in sichuan, china: a synthetic control study risk management and healthcare policy synthetic control">
+ <div class="paper-index">06<span>2024</span></div><div class="paper-body"><div class="paper-meta"><span>Risk Management and Healthcare Policy</span><span class="meta-dot">·</span><span>2024</span></div>
+ <h3><a href="https://doi.org/10.2147/RMHP.S463276" target="_blank" rel="noopener noreferrer">Effects of a diagnosis-related group payment reform on length and costs of hospitalization in Sichuan, China: A synthetic control study<span class="external" aria-hidden="true"> ↗</span></a></h3>
+ <p class="authors">Liu, Y.; <strong>Du, S.</strong>; Cao, J.; Niu, H.; Jiang, F.; Gong, L.</p><p data-en="Assessing length of stay and hospital costs under a DRG payment reform using a synthetic control design." data-zh="利用合成控制方法，评估DRG支付改革对住院日与住院费用的影响。" class="paper-note">Assessing length of stay and hospital costs under a DRG payment reform using a synthetic control design.</p>
+ <div class="paper-bottom"><span class="method">Synthetic control</span><a class="text-link" href="https://doi.org/10.2147/RMHP.S463276" target="_blank" rel="noopener noreferrer"><span data-en="Read article" data-zh="阅读论文" >Read article</span> <span aria-hidden="true">↗</span></a><button type="button" class="cite-button" data-cite="5"><span data-en="Cite" data-zh="引用" >Cite</span></button></div></div></li><li class="paper" data-year="2024" data-topic="home" data-search="preference of primary care patients for home-based healthcare and support services: a discrete choice experiment in china frontiers in public health discrete choice experiment">
+ <div class="paper-index">07<span>2024</span></div><div class="paper-body"><div class="paper-meta"><span>Frontiers in Public Health</span><span class="meta-dot">·</span><span>2024</span></div>
+ <h3><a href="https://doi.org/10.3389/fpubh.2024.1324776" target="_blank" rel="noopener noreferrer">Preference of primary care patients for home-based healthcare and support services: A discrete choice experiment in China<span class="external" aria-hidden="true"> ↗</span></a></h3>
+ <p class="authors">Liu, Y.; <strong>Du, S.</strong>; Liu, C.; Xue, T.; Tang, Y.</p><p data-en="Understanding patient preferences for the design and delivery of home-based healthcare and support." data-zh="通过离散选择实验，研究基层患者对居家医疗及支持服务的偏好。" class="paper-note">Understanding patient preferences for the design and delivery of home-based healthcare and support.</p>
+ <div class="paper-bottom"><span class="method">Discrete choice experiment</span><a class="text-link" href="https://doi.org/10.3389/fpubh.2024.1324776" target="_blank" rel="noopener noreferrer"><span data-en="Read article" data-zh="阅读论文" >Read article</span> <span aria-hidden="true">↗</span></a><button type="button" class="cite-button" data-cite="6"><span data-en="Cite" data-zh="引用" >Cite</span></button></div></div></li><li class="paper" data-year="2024" data-topic="systems" data-search="health system efficiency and equity in asean: an empirical investigation cost effectiveness and resource allocation health systems research">
+ <div class="paper-index">08<span>2024</span></div><div class="paper-body"><div class="paper-meta"><span>Cost Effectiveness and Resource Allocation</span><span class="meta-dot">·</span><span>2024</span></div>
+ <h3><a href="https://doi.org/10.1186/s12962-024-00588-3" target="_blank" rel="noopener noreferrer">Health system efficiency and equity in ASEAN: An empirical investigation<span class="external" aria-hidden="true"> ↗</span></a></h3>
+ <p class="authors">Liu, Y.; Gong, L.; Niu, H.; Jiang, F.; <strong>Du, S.</strong>; Jiang, Y.</p><p data-en="Investigating health system efficiency alongside equity in resource allocation across ASEAN countries." data-zh="从资源配置公平性与效率两个维度，考察东盟国家卫生系统的表现。" class="paper-note">Investigating health system efficiency alongside equity in resource allocation across ASEAN countries.</p>
+ <div class="paper-bottom"><span class="method">Health systems research</span><a class="text-link" href="https://doi.org/10.1186/s12962-024-00588-3" target="_blank" rel="noopener noreferrer"><span data-en="Read article" data-zh="阅读论文" >Read article</span> <span aria-hidden="true">↗</span></a><button type="button" class="cite-button" data-cite="7"><span data-en="Cite" data-zh="引用" >Cite</span></button></div></div></li><li class="paper" data-year="2024" data-topic="systems" data-search="long-term impacts of socioeconomic status and childhood trauma on depression in older adults: social work strategies social work in health care life-course analysis">
+ <div class="paper-index">09<span>2024</span></div><div class="paper-body"><div class="paper-meta"><span>Social Work in Health Care</span><span class="meta-dot">·</span><span>2024</span></div>
+ <h3><a href="https://doi.org/10.1080/00981389.2024.2408012" target="_blank" rel="noopener noreferrer">Long-term impacts of socioeconomic status and childhood trauma on depression in older adults: Social work strategies<span class="external" aria-hidden="true"> ↗</span></a></h3>
+ <p class="authors">Jiang, F.; Liu, Y.; Niu, H.; <strong>Du, S.</strong>; Gong, L.; Yang, X.; Rao, F.; Wang, H.; Wu, H.</p><p data-en="Studying life-course social and health factors related to depression among older adults." data-zh="研究生命历程中的社会经济状况、童年创伤与老年抑郁之间的关系。" class="paper-note">Studying life-course social and health factors related to depression among older adults.</p>
+ <div class="paper-bottom"><span class="method">Life-course analysis</span><a class="text-link" href="https://doi.org/10.1080/00981389.2024.2408012" target="_blank" rel="noopener noreferrer"><span data-en="Read article" data-zh="阅读论文" >Read article</span> <span aria-hidden="true">↗</span></a><button type="button" class="cite-button" data-cite="8"><span data-en="Cite" data-zh="引用" >Cite</span></button></div></div></li><li class="paper" data-year="2024" data-topic="systems" data-search="health literacy and self-management among middle-aged and young hypertensive patients: a parallel mediation effect of illness perception and self-efficacy frontiers in psychology mediation analysis">
+ <div class="paper-index">10<span>2024</span></div><div class="paper-body"><div class="paper-meta"><span>Frontiers in Psychology</span><span class="meta-dot">·</span><span>2024</span></div>
+ <h3><a href="https://doi.org/10.3389/fpsyg.2024.1349451" target="_blank" rel="noopener noreferrer">Health literacy and self-management among middle-aged and young hypertensive patients: A parallel mediation effect of illness perception and self-efficacy<span class="external" aria-hidden="true"> ↗</span></a></h3>
+ <p class="authors">Liu, Y.; Jiang, F.; Zhang, M.; Niu, H.; Cao, J.; <strong>Du, S.</strong>; Chen, H.; Wang, H.; Gong, L.; Rao, F.; Wu, H.</p><p data-en="Examining illness perception and self-efficacy in the relationship between health literacy and hypertension self-management." data-zh="分析疾病感知与自我效能在健康素养和高血压自我管理之间的中介作用。" class="paper-note">Examining illness perception and self-efficacy in the relationship between health literacy and hypertension self-management.</p>
+ <div class="paper-bottom"><span class="method">Mediation analysis</span><a class="text-link" href="https://doi.org/10.3389/fpsyg.2024.1349451" target="_blank" rel="noopener noreferrer"><span data-en="Read article" data-zh="阅读论文" >Read article</span> <span aria-hidden="true">↗</span></a><button type="button" class="cite-button" data-cite="9"><span data-en="Cite" data-zh="引用" >Cite</span></button></div></div></li></ol><p id="no-results" hidden><span data-en="No matching publications. Try another topic or search term." data-zh="没有匹配的论文，请尝试其他主题或关键词。" >No matching publications. Try another topic or search term.</span></p><button type="button" id="show-all" class="show-all"><span data-en="View all 10 publications" data-zh="查看全部10篇论文" >View all 10 publications</span> <span>↓</span></button></section><section id="experience"><div class="section-head"><div class="section-title"><span class="section-number">03</span><h2 data-en="Research experience" data-zh="科研经历" >Research experience</h2></div></div><div class="timeline"><article class="timeline-item"><span class="timeline-date">2024–present</span><div><h3 data-en="DRG payment and upcoding behaviour" data-zh="DRG支付与高编行为" >DRG payment and upcoding behaviour</h3><p data-en="National Natural Science Foundation of China · 72374078" data-zh="国家自然科学基金项目 · 72374078" class=project-source>National Natural Science Foundation of China · 72374078</p><p data-en="Interview design and fieldwork in Inner Mongolia and Sichuan; synthetic control and difference-in-differences analyses." data-zh="参与访谈设计及内蒙古、四川实地调研，运用合成控制与双重差分方法开展政策评估。" >Interview design and fieldwork in Inner Mongolia and Sichuan; synthetic control and difference-in-differences analyses.</p></div></article><article class="timeline-item"><span class="timeline-date">2024–present</span><div><h3 data-en="Proactive chronic disease management" data-zh="主动健康导向的慢性病管理" >Proactive chronic disease management</h3><p data-en="National Social Science Fund of China · 23BGL292" data-zh="国家社会科学基金项目 · 23BGL292" class=project-source>National Social Science Fund of China · 23BGL292</p><p data-en="Questionnaire and interview design, resident surveys in Zhejiang, and contributions to papers and the final project report." data-zh="参与问卷与访谈提纲设计、浙江居民调查、论文及结项报告撰写。" >Questionnaire and interview design, resident surveys in Zhejiang, and contributions to papers and the final project report.</p></div></article><article class="timeline-item"><span class="timeline-date">2023–present</span><div><h3 data-en="Integrated medical and elderly care" data-zh="医养结合服务模式" >Integrated medical and elderly care</h3><p data-en="National Key R&amp;D Program of China · 2020YFC2006000" data-zh="国家重点研发计划项目 · 2020YFC2006000" class=project-source>National Key R&amp;D Program of China · 2020YFC2006000</p><p data-en="Questionnaire development, field surveys in Hubei and Yunnan, and contributions to Chinese-language journal publications." data-zh="参与问卷设计、湖北与云南实地调查，以及中文期刊论文撰写。" >Questionnaire development, field surveys in Hubei and Yunnan, and contributions to Chinese-language journal publications.</p></div></article><article class="timeline-item"><span class="timeline-date">2025–present</span><div><h3 data-en="Healthy ageing and real-world data" data-zh="健康老龄化与真实世界数据" >Healthy ageing and real-world data</h3><p data-en="Chinese Gerontological and Geriatric Society · two projects" data-zh="中国老年学和老年医学学会 · 两项课题" class=project-source>Chinese Gerontological and Geriatric Society · two projects</p><p data-en="Work on cardiovascular event management through human–AI interaction, and risk prediction for older adults with diabetes and hypertension." data-zh="参与人机交互视角的老年心血管事件管理，以及老年糖尿病合并高血压风险预测研究。" >Work on cardiovascular event management through human–AI interaction, and risk prediction for older adults with diabetes and hypertension.</p></div></article></div></section><section id="talks"><div class="section-head"><div class="section-title"><span class="section-number">04</span><h2 data-en="Talks &amp; presentations" data-zh="会议报告" >Talks &amp; presentations</h2></div></div><div class="talks"><article class="talk"><span class="talk-date">JUL 2025</span><div><h3 data-en="iHEA Congress 2025" data-zh="国际卫生经济学大会" >iHEA Congress 2025</h3><p>Can Online Replace Offline? A Study on the Substitutability of Online Consultation for Offline Diagnosis and Treatment</p><span data-en="Conference presentation" data-zh="会议报告" class=talk-type>Conference presentation</span></div></article><article class="talk"><span class="talk-date">MAY 2025</span><div><h3 data-en="Healthy Ageing Conference 2025" data-zh="健康老龄化会议" >Healthy Ageing Conference 2025</h3><p>Impact of Policy Reforms on Hospital-at-Home Services: An Interrupted Time Series Analysis of Shanghai</p><span data-en="Oral presentation" data-zh="口头报告" class=talk-type>Oral presentation</span></div></article><article class="talk"><span class="talk-date">APR 2025</span><div><h3 data-en="10th National AIDS Academic Conference" data-zh="第十届全国艾滋病学术大会" >10th National AIDS Academic Conference</h3><p>Collaborative HIV Prevention and Treatment in County-Level Medical Alliances Based on the SFIC Model</p><span data-en="Poster presentation" data-zh="壁报展示" class=talk-type>Poster presentation</span></div></article><article class="talk"><span class="talk-date">NOV 2024</span><div><h3 data-en="Graduate Forum on Health Economics · Fudan University" data-zh="复旦大学第四届卫生经济学研究生论坛" >Graduate Forum on Health Economics · Fudan University</h3><p>Principles and Application of Interrupted Time Series Design</p><span data-en="Forum presentation" data-zh="论坛报告" class=talk-type>Forum presentation</span></div></article></div></section><section id="education"><div class="section-head"><div class="section-title"><span class="section-number">05</span><h2 data-en="Education &amp; recognition" data-zh="教育与荣誉" >Education &amp; recognition</h2></div></div><div class="degree"><span class="degree-years">2024–2027</span><div><h3 data-en="Master’s in Health Policy and Management" data-zh="卫生政策与管理硕士" >Master’s in Health Policy and Management</h3><p data-en="Huazhong University of Science and Technology · Expected June 2027" data-zh="华中科技大学 · 预计2027年6月毕业" >Huazhong University of Science and Technology · Expected June 2027</p><p class="degree-score">GPA 89.71/100 · 3.97/4.00</p></div></div><div class="degree"><span class="degree-years">2019–2023</span><div><h3 data-en="Bachelor’s in Health Policy and Management" data-zh="卫生政策与管理学士" >Bachelor’s in Health Policy and Management</h3><p data-en="Huazhong University of Science and Technology" data-zh="华中科技大学" >Huazhong University of Science and Technology</p><p class="degree-score">GPA 85.01/100 · 3.73/4.00</p></div></div><div class="recognition"><h3 data-en="Selected recognition" data-zh="部分荣誉" >Selected recognition</h3><ul><li><span>2024</span><span data-en="First-Class Academic Scholarship · HUST (Top 10%)" data-zh="华中科技大学一等学业奖学金（前10%）" >First-Class Academic Scholarship · HUST (Top 10%)</span></li><li><span>2023</span><span data-en="First Prize · 14th Hubei “Challenge Cup”" data-zh="第十四届湖北省“挑战杯”一等奖" >First Prize · 14th Hubei “Challenge Cup”</span></li><li><span>2023</span><span data-en="Second Prize &amp; Excellent Undergraduate Thesis · National “People’s Health” Cup" data-zh="第二届全国“人民健康杯”二等奖暨优秀本科毕业论文奖" >Second Prize &amp; Excellent Undergraduate Thesis · National “People’s Health” Cup</span></li></ul></div>
+ <details class="service-details"><summary><span data-en="Service &amp; professional experience" data-zh="社会服务与实践经历" >Service &amp; professional experience</span> <span>+</span></summary><div><p data-en="2023–2024 · Volunteer teacher, 25th Graduate Teaching Support Corps, Yunnan Province" data-zh="2023–2024 · 第二十五届研究生支教团，云南省" >2023–2024 · Volunteer teacher, 25th Graduate Teaching Support Corps, Yunnan Province</p><p data-en="2024–2025 · Research Office intern, Union Hospital, Tongji Medical College, HUST" data-zh="2024–2025 · 华中科技大学同济医学院附属协和医院科研处实习" >2024–2025 · Research Office intern, Union Hospital, Tongji Medical College, HUST</p><p data-en="2023 · Intern, Health Commission of Hubei Province" data-zh="2023 · 湖北省卫生健康委员会实习" >2023 · Intern, Health Commission of Hubei Province</p></div></details></section><section id="contact" class="contact-section"><span class="eyebrow"><span data-en="GET IN TOUCH" data-zh="联系交流" >GET IN TOUCH</span></span><h2 data-en="Let’s talk about health policy." data-zh="欢迎交流卫生政策研究。" >Let’s talk about health policy.</h2><p data-en="For research enquiries and academic exchange, you can reach me by email." data-zh="如需探讨研究问题或开展学术交流，欢迎通过邮件联系。" >For research enquiries and academic exchange, you can reach me by email.</p><div class="contact-actions"><a href="mailto:dusixian16@163.com" class="contact-email">dusixian16@163.com <span>↗</span></a><button type="button" id="copy-email" aria-label="Copy email address"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h4"/></svg></button></div></section><footer class="site-footer"><span>© 2026 杜思娴 · Sixian Du</span><span><span data-en="Adapted from" data-zh="基于" >Adapted from</span> <a href="https://github.com/yaoyao-liu/minimal-light" target="_blank" rel="noopener noreferrer">Minimal Light ↗</a></span><a href="#top" class="back-top" aria-label="Back to top">↑</a></footer></main></div><div id="toast" role="status" aria-live="polite"></div><dialog id="citation-dialog"><div class="dialog-top"><h2>Citation</h2><button type="button" id="close-citation" aria-label="Close citation">×</button></div><pre id="citation-text"></pre><button type="button" id="copy-citation" class="primary-button">Copy BibTeX</button></dialog><script src="assets/papers.js"></script><script src="assets/app.js"></script></body></html>
