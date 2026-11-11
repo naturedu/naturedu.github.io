@@ -1,7 +1,7 @@
 (() => {
   'use strict';
   const $ = (s) => document.querySelector(s);
-  let lang = 'en', expanded = false, topic = 'all';
+  let lang = 'en', expanded = true, topic = 'all', paperLanguage = 'all';
   const papers = [...document.querySelectorAll('.paper')];
   const toast = (message) => { $('#toast').textContent = message; $('#toast').classList.add('visible'); clearTimeout(window.toastTimer); window.toastTimer = setTimeout(() => $('#toast').classList.remove('visible'), 2600); };
   function applyLanguage(next) {
@@ -18,12 +18,12 @@
   }
   function filterPapers() {
     const query = $('#paper-search').value.toLowerCase().trim();
-    const matches = papers.filter(p => (topic === 'all' || p.dataset.topic === topic) && (!query || p.dataset.search.includes(query)));
-    const limit = expanded || query || topic !== 'all' ? Infinity : 3;
+    const matches = papers.filter(p => (topic === 'all' || p.dataset.topic === topic) && (paperLanguage === 'all' || p.dataset.language === paperLanguage) && (!query || p.dataset.search.includes(query)));
+    const limit = expanded || query || topic !== 'all' || paperLanguage !== 'all' ? Infinity : 3;
     papers.forEach(p => { p.hidden = !matches.includes(p) || matches.indexOf(p) >= limit; });
     $('#no-results').hidden = matches.length > 0;
-    $('#show-all').hidden = Boolean(query) || topic !== 'all';
-    $('#show-all').innerHTML = (expanded ? (lang === 'en' ? 'Show selected publications' : '收起论文列表') : (lang === 'en' ? `View all ${papers.length} publications` : `查看全部${papers.length}篇论文`)) + '<span>' + (expanded ? '↑' : '↓') + '</span>';
+    $('#show-all').hidden = Boolean(query) || topic !== 'all' || paperLanguage !== 'all';
+    $('#show-all').innerHTML = (expanded ? (lang === 'en' ? 'Collapse publication list' : '收起论文列表') : (lang === 'en' ? `View all ${papers.length} publications` : `查看全部${papers.length}篇论文`)) + '<span>' + (expanded ? '↑' : '↓') + '</span>';
     $('#result-count').textContent = lang === 'en' ? `${matches.length} publications match your filters.` : `找到${matches.length}篇匹配论文。`;
   }
   async function copy(text) {
@@ -42,13 +42,18 @@
     document.querySelectorAll('[data-filter]').forEach(b => { b.classList.toggle('active', b === button); b.setAttribute('aria-pressed', String(b === button)); });
     filterPapers();
   }));
+  document.querySelectorAll('[data-paper-language]').forEach(button => button.addEventListener('click', () => {
+    paperLanguage = button.dataset.paperLanguage;
+    document.querySelectorAll('[data-paper-language]').forEach(b => { b.classList.toggle('active', b === button); b.setAttribute('aria-pressed', String(b === button)); });
+    filterPapers();
+  }));
   $('#paper-search').addEventListener('input', filterPapers);
   $('#show-all').addEventListener('click', () => { expanded = !expanded; filterPapers(); if (!expanded) $('#publications').scrollIntoView({block:'start'}); });
   $('#copy-email').addEventListener('click', async () => toast(await copy('dusixian16@163.com') ? (lang === 'en' ? 'Email address copied' : '邮箱地址已复制') : (lang === 'en' ? 'Please select and copy the email address' : '请选中邮箱地址复制')));
   let activeBib = '';
   document.querySelectorAll('[data-cite]').forEach(button => button.addEventListener('click', () => {
     const p = window.PUBLICATIONS[Number(button.dataset.cite)];
-    activeBib = `@article{Du${p.year}_${p.doi.split('/').pop().replace(/[^a-z0-9]/gi, '')},\n  title = {${p.title}},\n  author = {${p.authors.split('; ').join(' and ')}},\n  journal = {${p.journal}},\n  year = {${p.year}},\n  doi = {${p.doi}}\n}`;
+    activeBib = p.bibtex;
     $('#citation-text').textContent = activeBib;
     $('#citation-dialog h2').textContent = lang === 'en' ? 'Citation' : '论文引用';
     $('#copy-citation').textContent = lang === 'en' ? 'Copy BibTeX' : '复制 BibTeX';
